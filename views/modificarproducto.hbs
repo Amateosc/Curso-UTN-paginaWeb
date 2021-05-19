@@ -1,0 +1,18 @@
+<h1>-</h1>
+{{#each productos}}
+<form method="POST" action="/admin/productosadmin/modificar/{{id}}">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Nombre del producto</label>
+    <input type="text" class="form-control" name="nombre" value="{{nombre}}">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Descripcion del producto</label>
+    <input type="text" class="form-control" name="descripcion" value="{{descripcion}}">
+  </div>
+    <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Descripcion del producto</label>
+    <input type="number" class="form-control" name="precio" value="{{precio}}">
+  </div>
+  <button type="submit" class="btn btn-primary">Modificar</button>
+  {{/each}}
+</form>

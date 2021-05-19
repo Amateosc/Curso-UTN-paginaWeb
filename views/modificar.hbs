@@ -1,0 +1,57 @@
+<div class="login-wrap" style="margin-top: 90px;">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Modificar Usuario</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+                {{!-- Inicio de Sesion --}}
+				{{#each usuario}}
+                <form action="/admin/usuariosadmin/modificar/{{id}}" method="POST">
+				<div class="group">
+					<label for="user" class="label">E-Mail</label>
+					<input  type="text" class="input" value="{{mail}}" name="mail">
+				</div>
+				<div class="group">
+					<label for="nombre" class="label">Nombre</label>
+					<input  type="text" class="input" name="nombre" value="{{nombre}}">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Contraseña</label>
+					<input  type="password" class="input" name="contra" value="{{contra}}">
+				</div>
+				<div class="group">
+					<label for="Admin" class="label">Admin</label>
+					<input  type="number" class="input" name="Admin" value="{{Admin}}" min="0" max="1" >
+				</div>
+				<div class="group">
+					<input type="submit" class="button" >
+				</div>
+			</div>
+            </form>
+			{{/each}}
+            {{!-- Crear sesion --}}
+            <form action="/usuarios/create" method="POST">
+			<div class="sign-up-htm">
+				<div class="group">
+					<label for="mail" class="label" >E-mail</label>
+					<input  type="text" name="mail"class="input" placeholder="mail">
+				</div>
+				<div class="group">
+					<label for="nombre" class="label" >Nombre</label>
+					<input  type="text"name="nombre" class="input" placeholder="nombre">
+				</div>
+				<div class="group">
+					<label for="contra" class="label">Contraseña</label>
+					<input  type="password"  name="contra"class="input" placeholder="contra">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" >
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</form>

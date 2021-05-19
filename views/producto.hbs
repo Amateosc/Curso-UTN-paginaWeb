@@ -1,0 +1,12 @@
+<div class="container">
+    {{#each producto}}
+    <img src="/images/{{uid}}" alt="no se encontro la imagen">
+    <form action="/productos/producto/{{id}}" method="post">
+        <h2 name="nombre" id="nombre">{{nombre}}</h2>
+        <h1 name="precio" id="precio">{{precio}}</h1>
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" class="form-control" name="cantidad" placeholder="cantidad" min="1" max="100">
+        <button type="submit" class="btn btn-primary">Comprar</button>
+    </form>
+    {{/each}}
+</div>

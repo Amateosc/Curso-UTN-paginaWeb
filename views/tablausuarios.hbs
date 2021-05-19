@@ -1,0 +1,37 @@
+
+<div style="margin-top: 100px;">
+<h1>Control de Usuarios para Administradores</h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre del usuario</th>
+      <th scope="col">Mail del usuario</th>
+      <th scope="col">Admin</th>  
+      <th class="col">Convertir Admin</th>    
+      <th class="col"><a href="/usuarios">Crear Usuario</a></th>
+      <th class="col"><a href="/admin/usuariosadmin/desactivados">Usuarios Deshabilitados</a></th>
+      <th class="col">Modificar Usuario</th>
+      <th class="col">Borrar</th>    
+       <th class="col">Activar usuarios Deshabilitados</th> 
+    </tr>
+  </thead>
+  {{#each usuarios}}
+  <tbody>
+    <tr>
+      <th scope="row">{{id}}</th>
+      <td>{{nombre}}</td>
+      <td>{{mail}}</td>
+      <td>{{Admin}}</td>
+      <td><a href="/admin/usuariosadmin/convert/{{id}}">Convertir</a></td>
+      <td></td> 
+      <td></td>
+      <td><a href="/admin/usuariosadmin/modificar/{{id}}">Modificar</a></td>
+      <td><a href="/admin/usuariosadmin/borrar/{{id}}">borrar</a></td>
+      <td><a href="/admin/usuariosadmin/activar/{{id}}">Activar habilitacion</a></td>
+    </tr>
+    </tbody>
+    {{/each}}
+    </table>
+    
+</div>
